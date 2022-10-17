@@ -53,17 +53,33 @@ jobs:
 
           df -h
 
+      - name: 下载包
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git
+          git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
+          git clone https://github.com/jerrykuku/luci-app-argon-config.git
+          cd ..
+          cd ..
+       
       - name: Update feeds
         run: |
-          #添加插件主题库
-          sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-          sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
-          sed -i '$a src-git rosy https://github.com/rosywrt/luci-theme-rosy' feeds.conf.default
-          #sed -i '$a src-git infinity https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom' feeds.conf.default
-          #更新下载插件包
+          sed -i '$a src-git passwalllib https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+          sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
+      - name: 更新主题
+        run: |
+          cd feeds/luci/themes
+          rm -rf luci-theme-argon
+          git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+          cd ..
+          cd ..
+          cd ..
+      
       - name: Generate configuration file
         run: |
           rm -f ./.config*
@@ -90,15 +106,19 @@ jobs:
           #LuCI插件
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-adguardhome=y
+          CONFIG_PACKAGE_luci-app-argon-config=y
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-app-netdata=y
           CONFIG_PACKAGE_luci-app-passwall=y
+          CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-turboacc=y
+          CONFIG_PACKAGE_luci-app-ssr-plus=y
+          CONFIG_PACKAGE_luci-app-diskman=n
+          CONFIG_PACKAGE_luci-app-docker=n
           CONFIG_PACKAGE_luci-app-adbyby-plus=n
           CONFIG_PACKAGE_luci-app-ddns=n
           CONFIG_PACKAGE_luci-app-ipsec-vpnd=n
           CONFIG_PACKAGE_luci-app-samba=n
-          CONFIG_PACKAGE_luci-app-ssr-plus=n
           CONFIG_PACKAGE_luci-app-unblockmusic=n
           CONFIG_PACKAGE_luci-app-vlmcsd=n
           CONFIG_PACKAGE_luci-app-vsftpd=n
@@ -111,8 +131,6 @@ jobs:
           #主题
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-rosy=y
-          #CONFIG_PACKAGE_luci-theme-infinityfreedom=y
           EOF
           
           #
