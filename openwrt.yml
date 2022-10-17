@@ -113,6 +113,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-turboacc=y
           CONFIG_PACKAGE_luci-app-ssr-plus=y
+          CONFIG_PACKAGE_luci-app-accesscontrol=n
           CONFIG_PACKAGE_luci-app-diskman=n
           CONFIG_PACKAGE_luci-app-docker=n
           CONFIG_PACKAGE_luci-app-adbyby-plus=n
@@ -120,6 +121,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ipsec-vpnd=n
           CONFIG_PACKAGE_luci-app-samba=n
           CONFIG_PACKAGE_luci-app-unblockmusic=n
+          CONFIG_PACKAGE_uci-app-upnp=n
           CONFIG_PACKAGE_luci-app-vlmcsd=n
           CONFIG_PACKAGE_luci-app-vsftpd=n
           CONFIG_PACKAGE_luci-app-wireguard=n
