@@ -121,7 +121,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ipsec-vpnd=n
           CONFIG_PACKAGE_luci-app-samba=n
           CONFIG_PACKAGE_luci-app-unblockmusic=n
-          CONFIG_PACKAGE_uci-app-upnp=n
+          CONFIG_PACKAGE_luci-app-upnp=n
           CONFIG_PACKAGE_luci-app-vlmcsd=n
           CONFIG_PACKAGE_luci-app-vsftpd=n
           CONFIG_PACKAGE_luci-app-wireguard=n
