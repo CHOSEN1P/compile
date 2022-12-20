@@ -2,11 +2,11 @@
 
 1. fork lede
 
-2. 更改/package/base-files/files/bin/config_generate中的lan口默认后台ip
+2. 更改/package/base-files/files/bin/config_generate中的lan口默认后台ip //150行
 
-3. 搜索hostname修改主机名
+3. 搜索hostname修改主机名 //290行
 
-4. 时区：timezone='CST-8'
+4. 时区：timezone='CST-8' //
 
 5. 时区名：zonename='Asia/Shanghai'
 
