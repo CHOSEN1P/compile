@@ -4,7 +4,7 @@
 
 2. 更改/package/base-files/files/bin/config_generate中的lan口默认后台ip //150行
 
-3. 搜索hostname修改主机名 //290行
+3. 搜索hostname修改主机名 //298行
 
 4. 时区：timezone='CST-8' //
 
