@@ -110,7 +110,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-passwall=y
           #CONFIG_PACKAGE_luci-app-openclash=y
           CONFIG_PACKAGE_luci-app-ttyd=y
-          CONFIG_PACKAGE_luci-app-turboacc=y
           CONFIG_PACKAGE_luci-app-arpbind=y
           CONFIG_PACKAGE_luci-app-diskman=y
           CONFIG_PACKAGE_luci-app-dockerman=y
@@ -121,6 +120,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ipsec-vpnd=n
           CONFIG_PACKAGE_luci-app-nlbwmon=n
           CONFIG_PACKAGE_luci-app-samba=n
+          CONFIG_PACKAGE_luci-app-turboacc=n
           CONFIG_PACKAGE_luci-app-unblockmusic=n
           CONFIG_PACKAGE_luci-app-upnp=n
           CONFIG_PACKAGE_luci-app-vlmcsd=n
