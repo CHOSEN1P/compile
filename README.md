@@ -11,5 +11,6 @@
 5. 时区名：zonename='Asia/Shanghai'
 
 6. 修改/package/base-files/files/etc/shadow中默认登录密码为$1$wEehtjxj$YBu4quNfVUjzfv8p/PBo5.
+   root:$1$wEehtjxj$YBu4quNfVUjzfv8p/PBo5.:0:0:99999:7:::
 
-7. 修改workflow中yml文件
+8. 修改workflow中yml文件
